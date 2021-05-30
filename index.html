@@ -27,22 +27,64 @@
         <source src="resources/hero-video.mp4" type="video/mp4" />
       </video>
       <div class="content">
-        <h1>Calculate</h1>
         <h1 class="heading">REIMANN INTEGRAL</h1>
-        <p>Analyze</p>
-        <img src="" alt="">
-        <form action="">
-            <input
-              type="text"
-              name="handle"
-              id
-              placeholder="Codeforces Handle"
-              required
-            />
-            <button type="submit">
-              See Results<i class="material-icons">arrow_forward</i>
-            </button>
-          </form>
+        <div class="formForDash">
+            <form id="joinOrCreateRoom">
+              <div style="width: 100%">
+                <div class="function">
+                    <label for="fun">F(x): </label>
+					<input type="text" name="fun" id="function" placeholder="x^2-e^x">
+
+                </div>
+                <div class="minMaxRange">
+                  <label for="min">From: </label>
+                  <input
+                    id="a"
+                    type="number"
+                    name="min"
+                    style="width: 80px; margin-right: 20px"
+                    value=1
+                  />
+                  to
+                  <input
+                    id="b"
+                    type="number"
+                    name="max"
+                    style="width: 100px; margin-left: 40px"
+                    value=5
+                  />
+                </div>
+                <div class="minMaxRange">
+                  <label for="time">Number of Rectangles: </label>
+                  <input
+                    type="number"
+                    name="time"
+                    style="width: 60px"
+                    value=10
+                  />
+                </div>
+                <div class="endpoints">
+					<div>Endpoint:</div>
+					<select id="endpoint">
+						<option value="left">Left endpoint</option>
+						<option value="mid">Midpoint</option>
+						<option value="right">Right endpoint</option>
+					</select>
+
+                </div>
+              </div>
+              
+              <div class="buttonsBlast">
+                <button
+                  type="submit"
+                >
+                  Calculate
+                  <i class="material-icons">arrow_forward</i>
+                </button>
+              </div>
+            </form>
+          </div>
+        
       </div>
     </div>
 
@@ -77,7 +119,7 @@
     </div>
     <footer>
         <img src="resources/logo_light.png" alt="">
-        <div className="about_us">
+        <div class="about_us">
           <h1>About Us</h1>
           <p>
             We are students of Delhi Technological University, India.<br></br>
@@ -144,7 +186,7 @@
             </li>
           </ul>
         </div>
-        <div className="contact_us">
+        <div class="contact_us">
           <h1>Contact Us</h1>
           <ul>
             <li>Codeforces Blog</li>

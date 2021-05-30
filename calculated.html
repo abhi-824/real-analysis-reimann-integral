@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Jacob Gonzalez">
+        <meta name="description" content="Free Riemann sum calculator">
+        <meta name="keywords" content="Riemann,Riemann sum,Riemann sum calculator, calculator">
+		<script type="text/javascript" src="js/parseFunction.js"></script>
+		<script type="text/javascript" src="js/rSum.js"></script>
+        <style>
+            body,div,h1,p,canvas,input,select{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header{
+                height: 50px;
+                background: #0cd6e4;
+            }
+            #header h1{
+				padding: 0 5px;
+                line-height: 50px;
+                font-family: Helvetica, sans-serif;
+                font-size: 30pt;
+                color: #aaa;
+            }
+			#divContent{
+				padding: 20px;
+			}
+            #graph{
+                border: 1px solid #000;
+            }
+			#form{
+				display: inline-block;
+				height: 350px;
+				width: 350px;
+				margin-left: 20px;
+				background: #ddd;
+				border: 1px solid #000;
+				border-radius: 5px;
+				padding: 0px 10px;
+			}
+			#input{
+				float: left;
+				width: 50%;
+			}
+			#input p{
+				padding: 5px 0px;
+				font-weight: bold;
+				font-family: helvetica, sans-serif;
+				font-size: 14pt;
+			}
+            .button{
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                background: #0cd6e4;
+                font-size: 12pt;
+				border-radius: 5px;
+				border: 2px solid #aaa;
+				color: #666;
+            }
+			#areaContainer{
+				float: right;
+				height: 350px;
+				width: 50%;
+			}
+			#area{
+				margin-top: 145px;
+				width: 175px;
+				font-family: comic sans ms, sans-serif;
+				color: #f00;
+				text-align: center;
+				line-height: 30px;
+			}
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Riemann Sum Calculator</h1>
+        </div>
+		<div id="divContent">
+			<canvas id="graph" width="700" height="350">Looks like your browser does not support the canvas element :/</canvas>
+			<div id="form">
+				<div id="input">
+					<p>F(x):</p>
+					<input type="text" id="function">
+					<p>From:</p>
+					<input type="number" id="a">
+					<p>To:</p>
+					<input type="number" id="b">
+					<p># of Rectangles:</p>
+					<input type="number" min="1" id="n">
+					<p>Endpoint:</p>
+					<select id="endpoint">
+						<option value="left">Left endpoint</option>
+						<option value="mid">Midpoint</option>
+						<option value="right">Right endpoint</option>
+					</select>
+					<p></p>
+					<div class="button" id="calc" style="cursor:pointer;">Calculate</div>
+					<p></p>
+					<div class="button" id="scale" style="opacity:0.5;">Scale to fit</div>
+				</div>
+				<div id="areaContainer"><p id="area"></p></div>
+			</div>
+		</div>
+    </body>
+</html>

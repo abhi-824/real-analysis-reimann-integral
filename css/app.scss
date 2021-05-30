@@ -139,7 +139,20 @@ nav img {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-
+label{
+    font-size:1.5rem!important;
+    margin-top: 1rem !important;
+}
+.endpoints{
+    display:flex;
+    grid-gap:1rem;
+    justify-content:flex-start;
+    align-items:center;
+}
+#endpoint{
+    display: block;
+    width:50%;
+}
 #joinOrCreateRoom label {
   font-size: 1rem;
   padding-left: 0;
