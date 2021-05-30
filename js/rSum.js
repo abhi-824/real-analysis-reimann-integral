@@ -13,20 +13,26 @@ window.onload = function(){
 	var maxDis = 0;
 	//Var's to be passed between Calculate and Scale
 	var mathExp,a,b,n,ep,upv,width,step;
-    document.getElementById("calc").onclick = function(){
+    // document.getElementById("calc").onclick = function(){
 		//Clear graph
 		ctx.clearRect(0,0,700,350);
 		//Clear net area
 		area = 0;
 		//Reset max distance
 		maxDis = 0;
+		const urlParams = new URLSearchParams(window.location.search);
+		const fun = urlParams.get('fun');
+		const max = urlParams.get('max');
+		const min = urlParams.get('min');
+		const time = urlParams.get('time');
+		console.log(fun)
 		//Get user input
-		mathExp = new func(document.getElementById("function").value);
+		mathExp = new func(fun);
 		mathExp.prep(); //Eventually put in a try catch block
 		console.log(mathExp.funcStr);
-        a = parseInt(document.getElementById("a").value);
-        b = parseInt(document.getElementById("b").value);
-        n = parseInt(document.getElementById("n").value);
+        a = parseInt(min);
+        b = parseInt(max);
+        n = parseInt(time);
 		ep = document.getElementById("endpoint").value;
 		//Canvas units per numerical value
 		upv = 700/(b-a);
@@ -79,7 +85,7 @@ window.onload = function(){
 		ctx.save();
 		//Display net area (rounded)
 		area = +area.toFixed(5); //arithmetic operator + converts area from str back to num, thus removing extra 0's
-		document.getElementById("area").innerHTML = "<strong>Net Area</strong>:<br>" + area;
+		document.getElementById("area").innerHTML = "Net Area: " + area;
 		//Activate or deactivate scale to fit button
 		if(maxDis){
 			scale.style.opacity = "1";
@@ -89,7 +95,7 @@ window.onload = function(){
 			scale.style.opacity = "0.5";
 			scale.style.cursor = "text";
 		}
-    }
+    // }
 	//Scale graph to fit canvas element
 	scale.onclick = function(){
 		if(scale.style.opacity === "1"){

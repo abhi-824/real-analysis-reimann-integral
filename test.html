@@ -27,66 +27,17 @@
         <source src="resources/hero-video.mp4" type="video/mp4" />
       </video>
       <div class="content">
-        <h1 class="heading">REIMANN INTEGRAL</h1>
-        <div class="formForDash">
-            <form id="joinOrCreateRoom" action="calculated.html">
-              <div style="width: 100%">
-                <div class="function">
-                    <label for="fun">F(x): </label>
-					<input type="text" name="fun" id="function" required placeholder="x^2-e^x">
-
-                </div>
-                <div class="minMaxRange">
-                  <label for="min">From: </label>
-                  <input
-                    id="a"
-                    type="number"
-                    name="min"
-                    style="width: 80px; margin-right: 20px"
-                    value=1
-                    required
-                  />
-                  to
-                  <input
-                    id="b"
-                    type="number"
-                    name="max"
-                    style="width: 100px; margin-left: 40px"
-                    value=5
-                    required
-                  />
-                </div>
-                <div class="minMaxRange">
-                  <label for="time">Number of Rectangles: </label>
-                  <input
-                    type="number"
-                    name="time"
-                    style="width: 60px"
-                    value=10
-                    required
-                  />
-                </div>
-                <div class="endpoints">
-					<div>Endpoint:</div>
-					<select id="endpoint">
-						<option value="left">Left endpoint</option>
-						<option value="mid">Midpoint</option>
-						<option value="right">Right endpoint</option>
-					</select>
-                </div>
-              </div>
-              
-              <div class="buttonsBlast">
-                <button
-                  type="submit"
-                >
-                  Calculate
-                  <i class="material-icons">arrow_forward</i>
-                </button>
-              </div>
-            </form>
-          </div>
-        
+        <h1 class="heading">Calculated Area: <span id="area"></span></h1>
+			<canvas id="graph" width="700" height="350">Looks like your browser does not support the canvas element :/</canvas>
+            <div class="endpoints">
+                <div>Endpoint:</div>
+                <select id="endpoint">
+                    <option value="left">Left endpoint</option>
+                    <option value="mid">Midpoint</option>
+                    <option value="right">Right endpoint</option>
+                </select>
+            </div>
+            <div class="button" id="scale" style="opacity:0.5;">Scale to fit</div>        
       </div>
     </div>
 
