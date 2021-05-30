@@ -13,7 +13,7 @@ window.onload = function(){
 	var maxDis = 0;
 	//Var's to be passed between Calculate and Scale
 	var mathExp,a,b,n,ep,upv,width,step;
-    // document.getElementById("calc").onclick = function(){
+	function calc(){
 		//Clear graph
 		ctx.clearRect(0,0,700,350);
 		//Clear net area
@@ -95,7 +95,11 @@ window.onload = function(){
 			scale.style.opacity = "0.5";
 			scale.style.cursor = "text";
 		}
-    // }
+    }
+	calc();
+    document.getElementById("calc").addEventListener("click",(e)=>{
+		e.preventDefault();calc();
+	})
 	//Scale graph to fit canvas element
 	scale.onclick = function(){
 		if(scale.style.opacity === "1"){
