@@ -9,6 +9,7 @@
         <meta name="keywords" content="Riemann,Riemann sum,Riemann sum calculator, calculator">
 		<script type="text/javascript" src="js/parseFunction.js"></script>
 		<script type="text/javascript" src="js/rSum.js"></script>
+		<script defer type="text/javascript" src="js/mathn.js"></script>
         <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -33,7 +34,19 @@
           <source src="resources/hero-video.mp4" type="video/mp4" />
         </video>
         <div class="content">
-          <h1 class="heading2"><span id="area"></span></h1>
+          
+          <h1 class="heading2">
+            <span id="left"></span>
+          </h1>
+          <h1 class="heading2">
+            <span id="right"></span>
+          </h1>
+          <h1 class="heading2">
+            <span id="mid"></span>
+          </h1>
+          <h1 class="heading2">
+            <span id="area"></span>
+          </h1>
               <canvas id="graph" width="700" height="250">Looks like your browser does not support the canvas element :/</canvas>
               <div class="endpoints">
                   <div>Endpoint:</div>
